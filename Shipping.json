@@ -2130,6 +2130,16 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorized Request"
           }
@@ -10459,6 +10469,30 @@
           "name": "PickupDateRange"
         },
         "description": "A range of time the package was picked up."
+      },
+      "errorResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "errors": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Error code",
+            "type": "string"
+          },
+          "message": {
+            "description": "Error message",
+            "type": "string"
+          }
+        }
       }
     }
   }
