@@ -386,15 +386,18 @@
           },
           "ValidAddressIndicator": {
             "description": "Indicates query found a valid match.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "AmbiguousAddressIndicator": {
             "description": "Indicates query could not find exact match. Candidate list follows.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "NoCandidatesIndicator": {
             "description": "No Candidate found.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "AddressClassification": {
             "$ref": "#/components/schemas/XAVResponse_AddressClassification"
@@ -520,17 +523,20 @@
       "XAVResponse_ValidAddressIndicator": {
         "description": "Indicates query found a valid match.",
         "maximum": 1,
-        "type": "string"
+        "type": "string",
+        "nullable": true
       },
       "XAVResponse_AmbiguousAddressIndicator": {
         "description": "Indicates query could not find exact match. Candidate list follows.",
         "maximum": 1,
-        "type": "string"
+        "type": "string",
+        "nullable": true
       },
       "XAVResponse_NoCandidatesIndicator": {
         "description": "No Candidate found.",
         "maximum": 1,
-        "type": "string"
+        "type": "string",
+        "nullable": true
       },
       "XAVResponse_AddressClassification": {
         "type": "object",
@@ -552,7 +558,8 @@
         "xml": {
           "name": "AddressClassification"
         },
-        "description": "AddressClassification Container."
+        "description": "AddressClassification Container.",
+        "nullable": true
       },
       "AddressClassification_Code": {
         "description": "Contains the classification code of the address:\n0 - UnClassified\n1 - Commercial\n2 - Residential",
@@ -588,7 +595,8 @@
           "AddressKeyFormat"
         ],
         "description": "Candidate Container.",
-        "maximum": 1
+        "maximum": 1,
+        "nullable": true
       },
       "Candidate_AddressClassification": {
         "type": "object",
@@ -610,7 +618,8 @@
         "xml": {
           "name": "AddressClassification"
         },
-        "description": "AddressClassification Container."
+        "description": "AddressClassification Container.",
+        "nullable": true
       },
       "Candidate_AddressKeyFormat": {
         "type": "object",
