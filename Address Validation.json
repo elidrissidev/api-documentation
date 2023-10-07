@@ -657,11 +657,13 @@
         "properties": {
           "ConsigneeName": {
             "description": "Name of business, company or person. Not returned if user selects the RegionalRequestIndicator.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "AttentionName": {
             "description": "Name of building. Not returned if user selects the RegionalRequestIndicator.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "AddressLine": {
             "description": "Address line (street number, street name and street type, and political division 1, political division 2 and postal code) used for street level information.\nAdditional secondary information (apartment, suite, floor, etc.)\nApplicable to US and PR only. \nNot returned if user selects the RegionalRequestIndicator.",
@@ -692,7 +694,8 @@
           },
           "Urbanization": {
             "description": "Puerto Rico Political Division 3. Only Valid for Puerto Rico.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "CountryCode": {
             "description": "A country or territory code. Required to be returned.",
