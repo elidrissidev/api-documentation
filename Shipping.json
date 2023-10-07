@@ -2058,7 +2058,14 @@
             }
           },
           "401": {
-            "description": "Unauthorized Request"
+            "description": "Unauthorized Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2141,7 +2148,14 @@
             }
           },
           "401": {
-            "description": "Unauthorized Request"
+            "description": "Unauthorized Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2212,7 +2226,14 @@
             }
           },
           "401": {
-            "description": "Unauthorized Request"
+            "description": "Unauthorized Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -10473,15 +10494,23 @@
       "errorResponse": {
         "type": "object",
         "properties": {
+          "response": {
+            "$ref": "#/components/schemas/errorResponseWrapper"
+          }
+        }
+      },
+      "errorResponseWrapper": {
+        "type": "object",
+        "properties": {
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/errors"
+              "$ref": "#/components/schemas/error"
             }
           }
         }
       },
-      "errors": {
+      "error": {
         "type": "object",
         "properties": {
           "code": {

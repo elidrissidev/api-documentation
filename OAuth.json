@@ -51,7 +51,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -61,7 +61,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -130,7 +130,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -140,7 +140,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -150,7 +150,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -160,7 +160,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -218,7 +218,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -228,7 +228,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -238,7 +238,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tokenErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -378,7 +378,7 @@
           }
         }
       },
-      "tokenErrorResponse": {
+      "errorResponse": {
         "type": "object",
         "properties": {
           "response": {
@@ -392,12 +392,12 @@
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/errors"
+              "$ref": "#/components/schemas/error"
             }
           }
         }
       },
-      "errors": {
+      "error": {
         "type": "object",
         "properties": {
           "code": {

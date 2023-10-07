@@ -97,7 +97,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -107,7 +107,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -117,7 +117,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
+                  "$ref": "#/components/schemas/errorResponse"
                 }
               }
             }
@@ -710,34 +710,34 @@
         ],
         "description": "AddressKeyFormat Container."
       },
-      "ErrorResponse": {
+      "errorResponse": {
         "type": "object",
         "properties": {
           "response": {
-            "$ref": "#/components/schemas/ErrorResponseWrapper"
+            "$ref": "#/components/schemas/errorResponseWrapper"
           }
         }
       },
-      "ErrorResponseWrapper": {
-        "title": "ErrorResponseWrapper",
+      "errorResponseWrapper": {
         "type": "object",
         "properties": {
           "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Error"
+              "$ref": "#/components/schemas/error"
             }
           }
         }
       },
-      "Error": {
-        "title": "Error",
+      "error": {
         "type": "object",
         "properties": {
           "code": {
+            "description": "Error code",
             "type": "string"
           },
           "message": {
+            "description": "Error message",
             "type": "string"
           }
         }
