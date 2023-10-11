@@ -8870,7 +8870,8 @@
           "name": "ShippingLabel"
         },
         "maximum": 1,
-        "description": "The container for UPS shipping label. Returned for following shipments -\nForward shipments,\nShipments with PRL returns service, \nElectronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present. Applicable only for ShipmentResponse and ShipAcceptResponse."
+        "description": "The container for UPS shipping label. Returned for following shipments -\nForward shipments,\nShipments with PRL returns service, \nElectronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present. Applicable only for ShipmentResponse and ShipAcceptResponse.",
+        "nullable": true
       },
       "ShippingLabel_ImageFormat": {
         "type": "object",
@@ -9038,7 +9039,8 @@
         "xml": {
           "name": "Form"
         },
-        "description": "Container tag for the International forms image.  Currently this container would be returned for UPS Premium Care shipments. Form is returned for following shipments -\nForward shipments,\nShipments with PRL ReturnService,\nElectronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. CN22 data for Worlwide economy services will be returned within the PDF417 barcode of the label."
+        "description": "Container tag for the International forms image.  Currently this container would be returned for UPS Premium Care shipments. Form is returned for following shipments -\nForward shipments,\nShipments with PRL ReturnService,\nElectronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. CN22 data for Worlwide economy services will be returned within the PDF417 barcode of the label.",
+        "nullable": true
       },
       "Form_Image": {
         "type": "object",
