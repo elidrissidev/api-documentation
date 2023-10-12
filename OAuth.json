@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "OAuth",
-    "description": "Generate and refresh OAuth access tokens",
+    "description": "Manage and authenticate using OAuth access tokens",
     "version": "1.0.1"
   },
   "servers": [
@@ -194,10 +194,7 @@
                     "description": "Refresh token from GenerateToken operation"
                   }
                 },
-                "required": [
-                  "grant_type",
-                  "refresh_token"
-                ]
+                "required": ["grant_type", "refresh_token"]
               }
             }
           }
@@ -277,11 +274,13 @@
         "properties": {
           "refresh_token_expires_in": {
             "description": "Expiration time for requested refresh token in seconds.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "refresh_token_status": {
             "description": "Status for requested refresh token.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "token_type": {
             "description": "Type of requested access token",
@@ -301,7 +300,8 @@
           },
           "refresh_token": {
             "description": "Refresh token to be used in refresh requests when obtaining new access token.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "scope": {
             "description": "Scope for requested token.",
@@ -309,7 +309,8 @@
           },
           "refresh_token_issued_at": {
             "description": "Time that refresh token was issued.",
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "expires_in": {
             "description": "Expire time for requested token in seconds.",
