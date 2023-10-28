@@ -11,10 +11,10 @@
     }
   ],
   "paths": {
-    "/security/v1/oauth/validate-client": {
+    "/security/v1/oauth/authorize": {
       "get": {
-        "description": "Validate Client",
-        "operationId": "ValidateClient",
+        "description": "Authorize Client",
+        "operationId": "AuthorizeClient",
         "parameters": [
           {
             "in": "query",
@@ -33,16 +33,54 @@
             },
             "description": "Callback URL for the requesting application.",
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "response_type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Valid Values: code",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional value supplied by the client, will be returned during the redirection back to the client. Can be utilized to maintain state between Auth-Code request and callback event."
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional value supplied by the client, will be returned during the redirection back to the client."
           }
         ],
         "responses": {
-          "200": {
+          "302": {
             "description": "successful operation",
-            "content": {
-              "application/json": {
+            "headers": {
+              "location": {
                 "schema": {
-                  "$ref": "#/components/schemas/validateSuccessResponse"
-                }
+                  "type": "string"
+                },
+                "description": "The UPS login redirection URI. Will be in the following format: https://www.ups.com/lasso/signin?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code&scope={scope}&state={state}&type=ups_com_api"
+              },
+              "appname": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "App name of the application requesting the Auth-Code."
+              },
+              "displayname": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Display name of the application requesting the Auth-Code."
               }
             }
           },
@@ -252,23 +290,6 @@
       }
     },
     "schemas": {
-      "validateSuccessResponse": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "description": "Status of request.",
-            "type": "string"
-          },
-          "type": {
-            "description": "Type of requested validation.",
-            "type": "string"
-          },
-          "LassoRedirectURL": {
-            "description": "Redirect URL for UPS Login.",
-            "type": "string"
-          }
-        }
-      },
       "generateTokenSuccessResponse": {
         "type": "object",
         "properties": {
